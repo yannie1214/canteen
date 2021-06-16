@@ -1,0 +1,86 @@
+{
+  "id": "2573799",
+  "name": "hungry",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "1048891",
+      "name": "关闭",
+      "font_class": "icon_close",
+      "unicode": "e62c",
+      "unicode_decimal": 58924
+    },
+    {
+      "icon_id": "1166678",
+      "name": "购物车",
+      "font_class": "cart",
+      "unicode": "e63b",
+      "unicode_decimal": 58939
+    },
+    {
+      "icon_id": "1316288",
+      "name": "关闭",
+      "font_class": "close",
+      "unicode": "e66f",
+      "unicode_decimal": 58991
+    },
+    {
+      "icon_id": "2570216",
+      "name": "加",
+      "font_class": "add",
+      "unicode": "e691",
+      "unicode_decimal": 59025
+    },
+    {
+      "icon_id": "6241501",
+      "name": "减",
+      "font_class": "down",
+      "unicode": "e627",
+      "unicode_decimal": 58919
+    },
+    {
+      "icon_id": "21883565",
+      "name": "搜索",
+      "font_class": "search1",
+      "unicode": "e6b2",
+      "unicode_decimal": 59058
+    },
+    {
+      "icon_id": "1306",
+      "name": "购物车空",
+      "font_class": "shoppingcart",
+      "unicode": "e600",
+      "unicode_decimal": 58880
+    },
+    {
+      "icon_id": "5030",
+      "name": "购物车满",
+      "font_class": "shoppingcart-1",
+      "unicode": "e601",
+      "unicode_decimal": 58881
+    },
+    {
+      "icon_id": "1462916",
+      "name": "search",
+      "font_class": "search",
+      "unicode": "e63e",
+      "unicode_decimal": 58942
+    },
+    {
+      "icon_id": "5365351",
+      "name": "返回",
+      "font_class": "back",
+      "unicode": "e6b1",
+      "unicode_decimal": 59057
+    },
+    {
+      "icon_id": "18724154",
+      "name": "返回",
+      "font_class": "back-1",
+      "unicode": "e62e",
+      "unicode_decimal": 58926
+    }
+  ]
+}
