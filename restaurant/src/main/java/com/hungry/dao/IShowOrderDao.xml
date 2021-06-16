@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ <mapper namespace="com.hungry.dao.IShowOrderDao">
+ 	<select id="getOrdersByUserId" resultType="Order">	<!-- 查找用户订单 -->
+ 		select * from aorder where user_id = #{xxx} 	
+ 	</select >
+ 	<select id="selectOrderByOrderId" resultType="Order"><!-- 根据id查订单 -->
+ 		select * from aorder where id = #{ooo}
+ 	</select>
+ 	<select id="selectDishesByOrderId" resultType="Dishes"><!-- 查找菜品 -->
+ 		select * from dishes where dishes_id = #{ooo}
+ 	</select>
+ 	
+ 	<select id="getAllOrders" resultType="Order"><!-- 查找所有订单 -->
+ 		select * from aorder 
+ 	</select>
+ 	<resultMap type="OrderItem" id="orderItemMapper"> 
+ 		<id column="order_id" property="order_id"/>
+ 		<result column="order_num" property="order_num"/>
+ 		<collection property="dishes" 
+ 					ofType="Dishes"
+ 					select="selectDishesByOrderId"
+ 					column="dishes_id">
+ 		</collection>	
+ 	</resultMap>
+ 	
+ 	<select id="getItemsByOrderId" resultMap="orderItemMapper"><!-- 查找订单详情 -->
+ 		select order_id,dishes_id,order_num from order_item where order_id = #{xxx}
+ 	</select>
+ </mapper>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ <mapper namespace="com.hungry.dao.ISaveOrderDao">
+ 	<insert id="saveOrder" useGeneratedKeys="true" keyColumn="id" keyProperty="id">
+ 		insert into aorder(order_code,create_date,amount,user_id) 
+ 		values(#{order_code},#{create_date},#{amount},#{user_id})
+ 	</insert>
+ 	
+ 	<insert id="saveItem">
+ 		insert into order_item(order_id,dishes_id,order_num) values(#{order_id},#{dishes_id},#{order_num})
+ 	</insert>
+ 	<delete id="deleteCart">
+ 	delete from shoppingcart where  D_id=#{D_id} and U_id=#{U_id}	
+ 	</delete>
+ 	
+ 	
+<!--  //查询已有销量 
+	<select id="querySales" resultType="java.lang.Integer">
+ 	  select dishes_sales from dishes where dishes_id=#{dishes_id}
+ 	</select>
+ 	    
+ 	  //更新销量
+ 	<update id="updateSales">
+      update dishes set dishes_sales=#{arg0} where dishes_id=#{arg1}
+ 	</update> 
+-->
+ 	
+ 	<!-- 查询销量表中是否有某菜的某个月的记录 -->
+ 	<select id="queryRecord" resultType="java.lang.Integer">
+ 	  select count(*) from dishes_sales where dishes_id=#{arg0} and year=#{arg1} and month=#{arg2}
+ 	</select>
+ 	
+ 	<!-- 查询已有销量 --> 
+	<select id="querySales" resultType="java.lang.Integer">
+ 	  select sales from dishes_sales where dishes_id=#{arg0} and year=#{arg1} and month=#{arg2}
+ 	</select>
+ 	
+ 	<!-- 更新销量 -->
+ 	<update id="updateSales">
+      update dishes_sales set sales=#{arg0} where dishes_id=#{arg1} and year=#{arg2} and month=#{arg3}
+ 	</update>
+ 	
+ 	<!-- 添加某菜的销量记录 -->
+ 	<insert id="addDishesSales">
+ 		insert into dishes_sales(dishes_id,year,month,sales) values(#{arg0},#{arg1},#{arg2},#{arg3})
+ 	</insert>
+ 	
+ </mapper>
+ 
+ 

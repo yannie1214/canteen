@@ -1,0 +1,294 @@
+@charset "UTF-8";
+html, body {
+    width: 100%;
+    height: 100%;
+}
+
+/* .radio-sex {
+  position: relative;
+  display: inline-block;
+  margin-right: 12px;
+}
+ 
+.radio-sex input {
+  vertical-align: middle;
+  前面三行代码是为了让radio单选按钮与文字对齐
+  width: 20px;
+  height: 20px;
+  appearance: none; 清楚默认样式
+  -webkit-appearance: none;
+  opacity: 0;
+  outline: none;
+  注意不能设置为display:none
+}
+ 
+.radio-sex label {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 1;
+  注意层级关系，如果不把label层级设为最低，会遮挡住input而不能单选
+  width: 20px;
+  height: 20px;
+  border: 1px solid #3582e9;
+  border-radius: 100%;
+}
+ 
+.radio-sex input[type="radio"]:checked + label {
+  background: #3582e9;
+}
+ 
+.radio-sex input[type="radio"]:checked + label::after {
+  content: "";
+  position: absolute;
+  left: 7px;
+  top: 2px;
+  width: 5px;
+  height: 12px;
+  border-right: 1px solid #fff;
+  border-bottom: 1px solid #fff;
+  transform: rotate(45deg);
+}
+.radio-sex span{
+    vertical-align: middle;
+} */
+
+/* .select {
+    position: relative;
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 325px;
+    color: #cccccc;
+    vertical-align: middle;
+    text-align: left;
+    user-select: none;
+    -webkit-touch-callout: none;
+}
+.select .placeholder {
+    position: relative;
+    display: block;
+    background-color: #393d41;
+    z-index: 1;
+    padding: 1em;
+    border-radius: 2px;
+    cursor: pointer;
+}
+.select .placeholder:hover {
+    background: #34383c;
+}
+.select .placeholder:after {
+    position: absolute;
+    right: 1em;
+    top: 50%;
+    transform: translateY(-50%);
+    font-family: 'FontAwesome';
+    content: '\f078';
+    z-index: 10;
+}
+.select.is-open .placeholder:after {
+    content: '\f077';
+}
+.select.is-open ul {
+    display: block;
+}
+.select.select--white .placeholder {
+    background: #fff;
+    color: #999;
+}
+.select.select--white .placeholder:hover {
+    background: #fafafa;
+}
+.select ul {
+    display: none;
+    position: absolute;
+    overflow: hidden;
+    width: 100%;
+    background: #fff;
+    border-radius: 2px;
+    top: 100%;
+    left: 0;
+    list-style: none;
+    margin: 5px 0 0 0;
+    padding: 0;
+    z-index: 100;
+}
+.select ul li {
+    display: block;
+    text-align: left;
+    padding: 0.8em 1em 0.8em 1em;
+    color: #999;
+    cursor: pointer;
+}
+.select ul li:hover {
+    background: #4ebbf0;
+    color: #fff;
+} */
+
+/* select {
+  Chrome和Firefox里面的边框是不一样的，所以复写了一下
+  border: solid 1px #000;
+  width: 270px;
+  height:35px;
+
+  很关键：将默认的select选择框样式清除
+  appearance:none;
+  -moz-appearance:none;
+  -webkit-appearance:none;
+
+  在选择框的最右侧中间显示小箭头图片
+  background: url("https://raw.githubusercontent.com/ourjs/static/gh-pages/2015/arrow.png") no-repeat scroll right center transparent;
+
+
+  为下拉小箭头留出一点位置，避免被文字覆盖
+  padding-right: 14px;
+}
+
+清除ie的默认选择框样式清除，隐藏下拉箭头
+select::-ms-expand { display: none; } */s
+
+
+.reg {
+    width: 100%;
+    height: 100%;
+    background: url("../img/temp/20.jpg") no-repeat;
+    background-size: 100% 100%;
+}
+
+.login {
+    width: 100%;
+    height: 100%;
+    background: url("../img/temp/19.jpg") no-repeat;
+    background-size: 100% 100%;
+}
+
+.login img, .reg img {
+    width: auto;
+}
+
+.login form, .reg form {
+    position: fixed;
+    top: 15%;
+    right: 140px;
+    padding: 20px 0;
+    /* text-align: center; */
+    z-index: 10;
+    background: #fff; 
+}
+
+.msg-warn {
+	margin-left: 1cm;
+   /*  position: relative;  */
+    background: #fef4e5;
+    color: #666;
+    display: inline-block;
+    border: 1px solid #f6c090;
+    padding: 3px 31px 3px 31px;
+    line-height: 15px;
+    /* height: auto; */
+    
+}
+
+.login form {
+    top: 13%;
+    border: 1px solid #dbdbdb;
+    width: 440px;
+    height: 400px;
+}
+
+.reg form {
+	top: 7%;
+    border: 1px solid #dbdbdb;
+    width: 480px;
+    height: 510px;
+    background: #fff;
+}
+
+.reg form h1, .login form h1 {
+    border-bottom: 1px solid #dbdbdb;
+    text-align: center;
+    padding-bottom: 20px;
+    
+}
+
+.reg form p, .login form p {
+	text-align: center;
+    margin-top: 15px;
+}
+
+.login form h4 {
+	margin-left: 2.2cm;
+    margin-top: 15px;
+    font-weight:normal;    
+}
+
+.reg form h4 {
+	margin-left: 2.8cm;
+    margin-top: 15px;
+    font-weight:normal;    
+}
+
+
+.reg form a.off, .login form a.off {
+	
+    position: absolute;
+    right: 20px;
+    top: 20px;
+}
+
+.reg form input, .login form input {
+    width: 270px;
+    height: 40px;
+    border-radius: 3px;
+    font-size: 15px;
+}
+
+.reg form input[type="text"], .login form input[type="text"] {
+    border: 1px solid #dbdbdb;
+    font-size: 15px;
+    padding-left: 10px;
+}
+
+.reg input[type="submit"], .login input[type="submit"] {
+    width: 280px;
+    background: #3582e9;
+    font-size: 20px;
+    border: none;
+    color: #fff;
+}
+
+div.reg form input.code {
+    width: 150px;
+}
+
+div.reg form p.txtL {
+    text-align: left;
+}
+
+div.reg form p.txtL img {
+    width: 97px;
+    height: 37px;
+    vertical-align: middle;
+}
+
+div.reg form p.txtL a {
+    color: #c10000;
+}
+
+.reg form p.txt, .login form p.txt {
+    width: 280px;
+    margin: 5px auto 0;
+    text-align: right;
+    word-spacing:50px; 
+/*     letter-spacing: 1px; */
+}
+
+.reg p.txt a, .login p.txt a, {
+    color: #666;
+    text-decoration: underline;
+}
+
+div.login form p.txt a {
+    margin-left: 130px;
+    cursor: pointer;
+}

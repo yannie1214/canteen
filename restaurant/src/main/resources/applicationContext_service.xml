@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+		
+	<!-- 	开启注解扫描 -->
+		<context:component-scan base-package="com.hungry.service"/>
+		<!-- <bean id="cartService" class="com.hungry.service.CartServiceImpl">
+        	<property name="dao" ref="CartDao" />
+        </bean>
+        <bean id="categoryService" class="com.hungry.service.CategoryServiceImpl">
+        	<property name="dao" ref="ICategoryDao" />
+        </bean>
+		<bean id="dishesService" class="com.hungry.service.DishesServiceImpl">
+        	<property name="dao" ref="DishesDao" />
+        </bean>
+        
+        <bean id="cateService" class="com.hungry.service.CategoryServiceImpl">
+        	<property name="dao" ref="ICategoryDao" />
+        </bean>
+        
+         <bean id="dishService" class="com.hungry.service.DishServiceImpl">
+        	<property name="dao" ref="CartDao" />
+        </bean>
+        
+         <bean id="userService" class="com.hungry.service.UserServiceImpl">
+        	<property name="dao" ref="UserDao" />
+        </bean> -->
+</beans>

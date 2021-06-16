@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hungry.dao.DishesDao">
+  	
+  	<!-- 返回所有菜品 -->
+	<select id="getAllList" resultType="Dishes">
+		SELECT * FROM dishes 
+	</select>
+
+  	<!-- 根据ID查询 -->
+	<select id="findById" resultType="Dishes">
+		SELECT * FROM dishes where dishes_id=#{dishes_id}
+	</select>
+	
+		<!-- 搜索查找 -->
+	<select id="findByWord" resultType="Dishes">
+		SELECT * FROM dishes 
+		<where>
+<!-- 			<if test="word != null and word != ''"> -->
+    			 dishes_name like "%"#{word}"%"
+    			or dishes_describe like "%"#{word}"%"
+			<!-- </if> -->
+		</where>
+	</select>
+	
+	<!-- 根据菜品类型查询 -->
+	<select id="getByType" resultType="Dishes">
+		SELECT * FROM dishes where dishes_cname=#{dishes_cname}
+	</select>
+	
+	<!-- 返回所有菜品类型 -->
+	<select id="getAllCategory" resultType="Category">
+		SELECT * FROM dishes_category 
+	</select>
+	<!-- 新增菜品 -->
+	<insert id="insertDishes">
+		insert into dishes(dishes_price,dishes_name,dishes_describe,dishes_cname,photo)
+			values(#{dishes_price},#{dishes_name},#{dishes_describe},#{dishes_cname},#{photo})
+	</insert>
+	<!-- 更新菜品 -->
+	<update id="updateDishes">
+		update dishes set dishes_price=#{dishes_price},dishes_name=#{dishes_name},dishes_describe=#{dishes_describe},photo=#{photo},dishes_cname=#{dishes_cname} where dishes_id=#{dishes_id}
+	</update>
+	<!-- 删除菜品 -->
+	<delete id="deleteDishes">
+		delete from dishes where dishes_id=#{id}
+	</delete>
+	
+	<!-- 展示销量前10菜品 -->
+	<select id="showTopSales" resultType="Dishes">
+ 	  select dishes.* from dishes,dishes_sales 
+      where year=#{arg0} and month=#{arg1} and dishes.dishes_id = dishes_sales.dishes_id 
+      order by sales desc
+      limit 10 
+	</select>
+	
+	 <insert id="insertAssess">
+ insert into star_assess(dishesId,starLevel,number) values(#{dishesId},#{starLevel},#{number})
+ </insert>
+ 
+ <select id="selectAssess" resultType="StarAssess">
+ select dishesId,starLevel,number from star_assess where dishesId=#{dishesId}
+ </select>
+ 
+ <update id="updateStarAssess">
+  update star_assess set starLevel=#{starLevel},number=#{number} where dishesId=#{dishesId}
+ </update>
+ 
+ <select id="selectAllAssess" resultType="StarAssess">
+ select dishesId,starLevel,number from star_assess
+ </select>
+	
+  </mapper>
